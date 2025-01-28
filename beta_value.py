@@ -26,7 +26,7 @@ def calculate_beta(stock_returns, benchmark_returns):
 
 # Download historical data
 data = yf.download(sensex_companies + [benchmark], start="2018-01-01", end="2024-01-01", interval="1d")
-returns = data["Adj Close"].pct_change().dropna()
+returns = data["Close"].pct_change().dropna()
 
 # Slicing data for 5 years, 3 years, and 1 year
 end_date = returns.index[-1]
